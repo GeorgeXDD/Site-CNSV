@@ -104,8 +104,8 @@
 			  <div class="row justify-content-center">
 				<div class="col-md-6">
 				  
-				  <h3 class="heading mb-4">Let's talk about everything!</h3>
-				  <p>Send us a message if you have any questions or if you want to get informed with something!</p>
+				  <h3 class="heading mb-4">Contact online</h3>
+				  <p>Va rugam sa ne trimiteti un mesaj prin acest form daca aveti orice nelamurire sau aveti nevoie de orice fel de informatie, iar cadrele responsabile o sa revina cu un raspuns la adresa de email in cel mai scurt timp!</p>
 	
 				  <p><img src="images/undraw-contact.svg" alt="Image" class="img-fluid"></p>
 	
@@ -115,17 +115,17 @@
 				  <form class="mb-5" action="contact.php" method="post" id="contactForm" name="contactForm">
 					<div class="row">
 					  <div class="col-md-12 form-group">
-						<input type="text" class="form-control" name="nume" id="name" placeholder="Your name">
+						<input type="text" class="form-control" name="nume" id="name" required placeholder="Your name">
 					  </div>
 					</div>
 					<div class="row">
 					  <div class="col-md-12 form-group">
-						<input type="text" class="form-control" name="email" id="email" placeholder="Email">
+						<input type="email" class="form-control" name="email" id="email" required placeholder="Email">
 					  </div>
 					</div>
 					<div class="row">
 					  <div class="col-md-12 form-group">
-						<input type="text" class="form-control" name="subiect" id="subject" placeholder="Subject">
+						<input type="text" class="form-control" name="subiect" id="subject" required placeholder="Subject">
 					  </div>
 					</div>
 					<div class="row">
@@ -140,11 +140,6 @@
 					  </div>
 					</div>
 				  </form>
-	
-				  <div id="form-message-warning mt-4"></div> 
-					<div id="form-message-success">
-						Your message was sent, thank you!
-					</div>
 				</div>
 			  </div>
 			</div>

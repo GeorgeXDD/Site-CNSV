@@ -1,47 +1,27 @@
 <?php
-    
-    
-    $link = msqli_connect("127.0.0.1","gfofiu","1234"," contact");
-    
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $name=$_POST["nume"];
-        $email=$_POST["email"];
-        $subject=$_POST["subiect"];
-        $message=$_POST["mesaj"];
-    
-        }
-    
-    // $sql="INSERT INTO Contact(nume, email, subiect, mesaj) VALUES (?, ?, ?, ?)";
+
+$con = mysqli_connect('localhost', 'root', '','contact');
 
 
-    // if(    $stmt = mysqli_prepare($link, $sql);)
-    // {
-    
-    //     mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $subject, $message);
-    
-    //     if(mysqli_stmt_execute($stmt))
-    //         header("location: contact.php");
-    //     else
-    //         echo "Something is not working. Please try again!";
-    
-    //     mysqli_stmt_close($stmt);
-    // }
-
-    $sql="INSERT INTO Contact(nume, email, subiect, mesaj) VALUES ('$name' , '$email', '$subject', '$message')";
+$nume = $_POST['nume'];
+$email = $_POST['email'];
+$subiect = $_POST['subiect'];
+$mesaj = $_POST['mesaj'];
 
 
-    if(mysqli_query($link, $sql)){
-        echo "<h3>data stored in a database successfully."
-            . " Please browse your localhost php my admin"
-            . " to view the updated data</h3>";
+$sql = "INSERT INTO `contact` (`id`, `nume`, `email`, `subiect`, `mesaj`) VALUES ('0', '$nume', '$email', '$subiect', '$mesaj')";
 
-        echo nl2br("\n$name\n $email\n "
-            . "$subject\n $message");
-    } else{
-        echo "ERROR: Hush! Sorry $sql. "
-            . mysqli_error($link);
-    }
-    
-        mysqli_close($link);
-    
-    ?>
+$rs = mysqli_query($con, $sql);
+
+if($rs)
+{
+	echo "";
+}
+
+?>
+<br>
+<div id="form-message-success">
+    Mesajul dumneavoastra a fost trimis cu succes, va rugam sa asteptati raspunsul nostru!
+</div>
+
+<meta http-equiv="refresh" content="2;url=contact.html"" />
